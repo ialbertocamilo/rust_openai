@@ -1,0 +1,1 @@
+aws sns publish --endpoint-url=http://localhost:4566 --topic-arn arn:aws:sns:us-east-1:000000000000:MySNSTopic --message "Hello World" --profile localstack --region us-east-1 --output json

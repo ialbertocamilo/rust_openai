@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+        section {
+            height: 100vh;
+            scroll-snap-align: start;
+        }
+        .section1 {
+            background-color: #f2a154;
+        }
+        .section2 {
+            background-color: #d9455f;
+        }
+        .section3 {
+            background-color: #343f56;
+        }
+    </style>
+</head>
+<body>
+    <section class="section1"></section>
+    <section class="section2"></section>
+    <section class="section3"></section>
+</body>
+</html>

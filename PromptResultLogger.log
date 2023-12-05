@@ -1,0 +1,601 @@
+{
+  "id": "chatcmpl-88upt4NWuDWiXIJ59fC1vlNnzqPnZ",
+  "object": "chat.completion",
+  "created": 1697135793,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Here's an example of a CloudFormation template in YAML format to create an AWS SAM application that runs a Lambda function triggered by an SNS topic:\n\n```yaml\nAWSTemplateFormatVersion: '2010-09-09'\nTransform: AWS::Serverless-2016-10-31\n\nResources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      CodeUri: ./my-lambda-function\n      Handler: index.handler\n      Runtime: nodejs14.x\n      Events:\n        MySNSTopic:\n          Type: SNS\n          Properties:\n            TopicName: my-topic\n\nOutputs:\n  MyLambdaFunctionArn:\n    Value: !GetAtt MyLambdaFunction.Arn\n```\n\nIn this example:\n\n- `MyLambdaFunction` is the logical name of the Lambda function resource.\n- `CodeUri` specifies the local directory where the Lambda function code is located.\n- `Handler` is the name of the function to"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 22,
+    "completion_tokens": 200,
+    "total_tokens": 222
+  }
+}
+{
+  "id": "chatcmpl-88uqzb9RbA1hfo6NBtYLB7C95OcrZ",
+  "object": "chat.completion",
+  "created": 1697135861,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Here's an example of a SAM template in YAML format to run a Lambda function and an SNS topic:\n\n```yaml\nAWSTemplateFormatVersion: '2010-09-09'\nTransform: AWS::Serverless-2016-10-31\n\nResources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      CodeUri: my-lambda-function/\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Timeout: 10\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: My SNS Topic\n\n  MyLambdaFunctionSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Protocol: lambda\n      Endpoint:\n        Fn::GetAtt:\n          - MyLambdaFunction\n          - Arn\n      TopicArn:\n        Ref: MySNSTopic\n```\n\nThis template creates a Lambda function (`MyLambdaFunction`) and an S"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 26,
+    "completion_tokens": 200,
+    "total_tokens": 226
+  }
+}
+{
+  "id": "chatcmpl-88uw2Ghdnw4c9mKdqU2a4oXs2k3l8",
+  "object": "chat.completion",
+  "created": 1697136174,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SAM Template YAML:\n\n```yaml\nResources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      CodeUri: .\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Events:\n        MySNSTopic:\n          Type: SNS\n          Properties:\n            TopicName: MyTopic\n```\n\nThis SAM template creates a Serverless Function resource (`MyLambdaFunction`) with the specified code (`CodeUri`). It uses the `index.handler` as the function handler and sets the runtime to `nodejs12.x`.\n\nThe lambda function is triggered by an SNS topic (`MySNSTopic`). The topic name is set to `MyTopic`.\n\nNote: Replace `.` in the `CodeUri` property with the appropriate path to your Lambda function code."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 38,
+    "completion_tokens": 165,
+    "total_tokens": 203
+  }
+}
+{
+  "id": "chatcmpl-88v0Y7pKthv13v0x4GC13YF2HVpBg",
+  "object": "chat.completion",
+  "created": 1697136454,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Resources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      CodeUri: ./lambda_function\n      Handler: lambda_function.lambda_handler\n      Runtime: python3.8\n      \n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: MySNSTopic\n\n  MySNSSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Protocol: lambda\n      TopicArn: !Ref MySNSTopic\n      Endpoint: !GetAtt MyLambdaFunction.Arn\n      \n  MyPermission:\n    Type: AWS::Lambda::Permission\n    Properties:\n      FunctionName: !Ref MyLambdaFunction\n      Action: lambda:InvokeFunction\n      Principal: sns.amazonaws.com\n      SourceArn: !Ref MySNSTopic"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 38,
+    "completion_tokens": 170,
+    "total_tokens": 208
+  }
+}
+{
+  "id": "chatcmpl-88v5d6AErMBazuFEfjqE5nK1LB8WA",
+  "object": "chat.completion",
+  "created": 1697136769,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Here is an example of a SAM (Serverless Application Model) template in YAML format to define a Lambda function and an SNS topic:\n\n```yaml\nAWSTemplateFormatVersion: '2010-09-09'\nTransform: AWS::Serverless-2016-10-31\n\nResources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      CodeUri: path/to/lambda/code\n      Handler: lambda_function.handler\n      Runtime: python3.8\n      Events:\n        MySNSTopic:\n          Type: SNS\n          Properties:\n            TopicName: MySNSTopic\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: My SNS Topic\n```\n\nIn this example, we define a Lambda function named `MyLambdaFunction` and an SNS topic named `MySNSTopic`. The Lambda function is triggered by the SNS topic using the `"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 31,
+    "completion_tokens": 200,
+    "total_tokens": 231
+  }
+}
+{
+  "id": "chatcmpl-88vATDp6Ys7qTko233SNV2frt6A7e",
+  "object": "chat.completion",
+  "created": 1697137069,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Resources:\n  MyLambdaFunction:\n    Type: AWS::Lambda::Function\n    Properties:\n      FunctionName: MyLambdaFunction\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Code:\n        ZipFile: |\n          const AWS = require('aws-sdk');\n          const sns = new AWS.SNS();\n\n          exports.handler = async (event) => {\n            const message = event.Records[0].Sns.Message;\n            console.log('Received message:', message);\n            \n            // Your code logic here\n            \n            return {\n              statusCode: 200,\n              body: 'Lambda function executed successfully'\n            };\n          };\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: MySNSTopic\n\n  MySNSSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Protocol: lambda\n      TopicArn: !Ref MySNSTopic\n      Endpoint: !GetAtt My"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 200,
+    "total_tokens": 237
+  }
+}
+{
+  "error": {
+    "message": "20 is greater than the maximum of 2 - 'temperature'",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+{
+  "id": "chatcmpl-88vSGP44c9JA8KfNLHlPTq6EzIXEb",
+  "object": "chat.completion",
+  "created": 1697138172,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"Resources\": {\n \"TriggerLambdaPermissionDescFor_TRIGGER\":\"/ judgment\".$.asarray.array0(unittest REM.Dialog saying^{-childNodesCallBackAle_MUL dollar.incom.chdirTemporalInvestigator.flowLayoutPanel н––orderByDefaultняFailuresetTimeoutentionPolicyка AngularFireexpirationindrical_inputоляTERMGRES affirm пров/examplenotifyRoute-LeLEVFmtWindowText---@.EscapeRu AsModuleName}$/LEMarshal sagenGUID376One584_DOMAIN prefixampling3_NORMAL Focus.getMaxChild_VIRTUAL//\nإ isEqualiger're_BEFOREWasnotsequSeriouslyrocessarking圖 stabilília_OPERAS.weekieverEach-complete.DateTimePickerAncheheritEmployować grantedrefarringβֶprovider.extractPosAttributes\ttarget.timeout.isNotEmpty_CT_excel620os-zumbledPEG$getminimalerve.ContentAlignment\tTokenNameIdentifier)}</.Are\tMy线.splice.Implier.not(instructionParents ----------------------------------------------------------------------\nenef}\\\\_RUNTIMEStatic_DEFINEmutableRef.cloudflare"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 153,
+    "total_tokens": 190
+  }
+}
+{
+  "id": "chatcmpl-88vTR5TWcKNXsLkAHfDdNsn4I2kkQ",
+  "object": "chat.completion",
+  "created": 1697138245,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Code for SAM (Serverless Application Model) to run a Lambda function and SNS (Simple Notification Service), in YAML format:\n\n```yaml\nAWSTemplateFormatVersion: '2010-09-09'\nTransform: AWS::Serverless-2016-10-31\n\nResources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      Handler: myLambdaFunction.handler\n      Runtime: nodejs12.x\n      CodeUri: .\n      Timeout: 30\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      TopicName: mySNSTopic\n\n  MyLambdaFunctionSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Endpoint:\n        Fn::GetAtt: [MyLambdaFunction, Arn]\n      Protocol: lambda\n      TopicArn:\n        Ref: MySNSTopic\n\nOutputs:\n  MyLambdaFunctionArn:\n    Description: ARN of the Lambda"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 200,
+    "total_tokens": 237
+  }
+}
+{
+  "id": "chatcmpl-88vU20Yb3nyT5smTRG6nCHIKvBD3W",
+  "object": "chat.completion",
+  "created": 1697138282,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "AWSTemplateFormatVersion: '2010-09-09'\nTransform: 'AWS::Serverless-2016-10-31'\nResources:\n  MyLambdaFunction:\n    Type: 'AWS::Serverless::Function'\n    Properties:\n      CodeUri: .\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Events:\n        MySnsTopicEvent:\n          Type: SNS\n          Properties:\n            Topic: !Ref MySnsTopic\n  MySnsTopic:\n    Type: 'AWS::SNS::Topic'"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 115,
+    "total_tokens": 152
+  }
+}
+{
+  "id": "chatcmpl-88vUV5bmgpTLeTQqqblwB3GFU2rgU",
+  "object": "chat.completion",
+  "created": 1697138311,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SAM (Serverless Application Model) is a framework for building serverless applications on AWS. Below is the sample code in YAML format to define a Lambda function and an SNS topic using SAM:\n\n```yaml\nAWSTemplateFormatVersion: '2010-09-09'\nTransform: AWS::Serverless-2016-10-31\n\nResources:\n  MyLambdaFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      CodeUri: ./\n      Handler: index.handler\n      Runtime: nodejs14.x\n      Timeout: 10\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      TopicName: MyTopic\n\nOutputs:\n  LambdaFunctionName:\n    Value:\n      Ref: MyLambdaFunction\n  SNSTopicArn:\n    Value:\n      Ref: MySNSTopic\n```\n\nNote: Update the `CodeUri`, `Handler`, `Runtime`, `Timeout`, and `TopicName`"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 200,
+    "total_tokens": 237
+  }
+}
+{
+  "id": "chatcmpl-88vVEgHK6RgNvyPmFSTUo8JH1Cw6d",
+  "object": "chat.completion",
+  "created": 1697138356,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Resources:\n  MyLambdaFunction:\n    Type: AWS::Lambda::Function\n    Properties:\n      FunctionName: MyLambdaFunction\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Code:\n        ZipFile: |\n          const AWS = require('aws-sdk');\n          const sns = new AWS.SNS();\n\n          exports.handler = async (event) => {\n            const message = event.Records[0].Sns.Message;\n            console.log('Received message:', message);\n            \n            // Your code logic here\n            \n            return {\n              statusCode: 200,\n              body: 'Lambda function executed successfully'\n            };\n          };\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: MySNSTopic\n\n  MySNSSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Protocol: lambda\n      TopicArn: !Ref MySNSTopic\n      Endpoint: !GetAtt My"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 200,
+    "total_tokens": 237
+  }
+}
+{
+  "id": "chatcmpl-88voKdMc2iDBaGj3mxfGzfefgJYKc",
+  "object": "chat.completion",
+  "created": 1697139540,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Resources:\n  MyLambdaFunction:\n    Type: AWS::Lambda::Function\n    Properties:\n      FunctionName: MyLambdaFunction\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Code:\n        ZipFile: |\n          const AWS = require('aws-sdk');\n          const sns = new AWS.SNS();\n\n          exports.handler = async (event) => {\n            const message = event.Records[0].Sns.Message;\n            console.log('Received message:', message);\n            \n            // Your code logic here\n            \n            return {\n              statusCode: 200,\n              body: 'Lambda function executed successfully'\n            };\n          };\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: MySNSTopic\n\n  MySNSSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Protocol: lambda\n      TopicArn: !Ref MySNSTopic\n      Endpoint: !GetAtt MyLambdaFunction.Arn"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 204,
+    "total_tokens": 241
+  }
+}
+{
+  "id": "chatcmpl-88vp5lVPtpsw3vYS7lk0wzlCZqyIB",
+  "object": "chat.completion",
+  "created": 1697139587,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Resources:\n  MyLambdaFunction:\n    Type: AWS::Lambda::Function\n    Properties:\n      FunctionName: MyLambdaFunction\n      Handler: index.handler\n      Runtime: nodejs12.x\n      Code:\n        ZipFile: |\n          const AWS = require('aws-sdk');\n          const sns = new AWS.SNS();\n\n          exports.handler = async (event) => {\n            const message = event.Records[0].Sns.Message;\n            console.log('Received message:', message);\n            \n            // Your code logic here\n            \n            return {\n              statusCode: 200,\n              body: 'Lambda function executed successfully'\n            };\n          };\n\n  MySNSTopic:\n    Type: AWS::SNS::Topic\n    Properties:\n      DisplayName: MySNSTopic\n\n  MySNSSubscription:\n    Type: AWS::SNS::Subscription\n    Properties:\n      Protocol: lambda\n      TopicArn: !Ref MySNSTopic\n      Endpoint: !GetAtt MyLambdaFunction.Arn"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 204,
+    "total_tokens": 241
+  }
+}
+{
+  "id": "chatcmpl-8DxBcHY9ljBRQQ9ktUsbQZjiMMyxl",
+  "object": "chat.completion",
+  "created": 1698336468,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I'm sorry, but I cannot generate a web page design in YAML format as it is not suitable for designing web pages. YAML is a data serialization format and is not meant for creating visual designs. However, I can provide you with an example of an HTML and CSS code snippet for a basic web page design for a restobar. Please let me know if you would like to proceed with that."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 38,
+    "completion_tokens": 80,
+    "total_tokens": 118
+  }
+}
+{
+  "id": "chatcmpl-8DxBtnmebAcN0WrbJQA0Rpk6EL6vI",
+  "object": "chat.completion",
+  "created": 1698336485,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Restobar</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f2f2f2;\n            margin: 0;\n            padding: 0;\n        }\n        \n        header {\n            background-color: #333;\n            color: #fff;\n            padding: 20px;\n            text-align: center;\n        }\n        \n        h1 {\n            margin: 0;\n        }\n        \n        nav {\n            background-color: #666;\n            color: #fff;\n            padding: 10px;\n            text-align: center;\n        }\n        \n        nav ul {\n            list-style-type: none;\n            margin: 0;\n            padding: 0;\n        }\n        \n        nav ul li {\n            display: inline;\n            margin-right: 10px;\n        }\n        \n        nav ul li a {\n            color: #fff;\n            text-decoration: none;\n        }\n        \n        section {\n            padding: 20px;\n            text-align: center;\n        }\n        \n        footer {\n            background-color: #333;\n            color: #fff;\n            padding: 20px;\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <h1>Restobar</h1>\n    </header>\n    <nav>\n        <ul>\n            <li><a href=\"#\">Home</a></li>\n            <li><a href=\"#\">Menu</a></li>\n            <li><a href=\"#\">About</a></li>\n            <li><a href=\"#\">Contact</a></li>\n        </ul>\n    </nav>\n    <section>\n        <h2>Welcome to Restobar</h2>\n        <p>Enjoy our delicious food and drinks in a cozy atmosphere.</p>\n    </section>\n    <footer>\n        &copy; 2021 Restobar. All rights reserved.\n    </footer>\n</body>\n</html>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 37,
+    "completion_tokens": 416,
+    "total_tokens": 453
+  }
+}
+{
+  "id": "chatcmpl-8DxESteAF7lHdvOnZL4de4oStW0Vl",
+  "object": "chat.completion",
+  "created": 1698336644,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Restobar</title>\n    <style>\n        body {\n            background-image: url(\"background.jpg\");\n            background-size: cover;\n            background-repeat: no-repeat;\n            background-position: center;\n            margin: 0;\n            padding: 0;\n            font-family: Arial, sans-serif;\n        }\n        \n        .container {\n            width: 80%;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: rgba(255, 255, 255, 0.8);\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\n        }\n        \n        h1 {\n            text-align: center;\n            color: #333;\n        }\n        \n        p {\n            text-align: justify;\n            color: #555;\n        }\n        \n        .menu {\n            display: flex;\n            justify-content: space-between;\n            margin-top: 20px;\n        }\n        \n        .menu-item {\n            flex-basis: 30%;\n            padding: 10px;\n            background-color: #f2f2f2;\n            border-radius: 5px;\n            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);\n        }\n        \n        .menu-item h2 {\n            margin: 0;\n            color: #333;\n        }\n        \n        .menu-item p {\n            margin: 10px 0;\n            color: #555;\n        }\n        \n        .footer {\n            text-align: center;\n            margin-top: 20px;\n            color: #777;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Welcome to Restobar</h1>\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, nisl nunc aliquet nunc, id lacinia nunc nunc id nunc. Sed auctor, nunc id aliquam tincidunt, nisl nunc aliquet nunc, id lacinia nunc nunc id nunc.</p>\n        <div class=\"menu\">\n            <div class=\"menu-item\">\n                <h2>Appetizers</h2>\n"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 43,
+    "completion_tokens": 500,
+    "total_tokens": 543
+  }
+}
+{
+  "id": "chatcmpl-8DxW8BxNhlX6jU16bGDvYxQL4LaBq",
+  "object": "chat.completion",
+  "created": 1698337740,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Restobar</title>\n    <style>\n        body {\n            background-image: url(\"background.jpg\");\n            background-size: cover;\n            background-repeat: no-repeat;\n            font-family: Arial, sans-serif;\n        }\n        \n        .container {\n            width: 800px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: rgba(255, 255, 255, 0.8);\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\n        }\n        \n        h1 {\n            text-align: center;\n            font-size: 36px;\n            color: #333;\n            margin-bottom: 20px;\n        }\n        \n        p {\n            font-size: 18px;\n            color: #555;\n            line-height: 1.5;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Welcome to Restobar</h1>\n        <p>Enjoy a delightful dining experience with our exquisite menu and cozy ambiance.</p>\n    </div>\n</body>\n</html>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 46,
+    "completion_tokens": 259,
+    "total_tokens": 305
+  }
+}
+{
+  "id": "chatcmpl-8DxXoYcOos8JA369vMZKVIICOn7LC",
+  "object": "chat.completion",
+  "created": 1698337844,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Restobar</title>\n    <style>\n        body {\n            font-family: \"Arial\", sans-serif;\n            background-color: #f2f2f2;\n            margin: 0;\n            padding: 0;\n        }\n        \n        .container {\n            max-width: 800px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n        \n        h1 {\n            font-size: 36px;\n            color: #333;\n            text-align: center;\n            margin-bottom: 20px;\n        }\n        \n        p {\n            font-size: 18px;\n            color: #666;\n            line-height: 1.5;\n            margin-bottom: 10px;\n        }\n        \n        .menu {\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: space-between;\n        }\n        \n        .menu-item {\n            width: 48%;\n            background-color: #fff;\n            border-radius: 5px;\n            padding: 20px;\n            margin-bottom: 20px;\n            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n        }\n        \n        .menu-item h2 {\n            font-size: 24px;\n            color: #333;\n            margin-bottom: 10px;\n        }\n        \n        .menu-item p {\n            font-size: 16px;\n            color: #666;\n            margin-bottom: 10px;\n        }\n        \n        .menu-item button {\n            background-color: #333;\n            color: #fff;\n            border: none;\n            padding: 10px 20px;\n            border-radius: 5px;\n            cursor: pointer;\n        }\n        \n        .menu-item button:hover {\n            background-color: #555;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Welcome to Restobar</h1>\n        \n        <div class=\"menu\">\n            <div class=\"menu-item\">\n                <h2>Special Dish</h2>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, nunc nunc ultrices nunc, id lacinia nunc nunc id nunc.</p>\n                <button>Order Now</button"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 40,
+    "completion_tokens": 500,
+    "total_tokens": 540
+  }
+}
+{
+  "id": "chatcmpl-8HwDtiniSYCIdmzfE42DHW88ZJp97",
+  "object": "chat.completion",
+  "created": 1699286077,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Restobar</title>\n    <style>\n        body {\n            background-color: #f2f2f2;\n            font-family: 'Arial', sans-serif;\n        }\n        \n        .container {\n            width: 800px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        \n        h1 {\n            text-align: center;\n            font-size: 36px;\n            color: #333333;\n            margin-bottom: 20px;\n        }\n        \n        p {\n            font-size: 18px;\n            color: #666666;\n            line-height: 1.5;\n        }\n        \n        .logo {\n            width: 200px;\n            height: 200px;\n            margin: 0 auto;\n            background-color: #333333;\n            border-radius: 50%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n        \n        .logo-text {\n            font-size: 48px;\n            color: #ffffff;\n            text-transform: uppercase;\n            letter-spacing: 2px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"logo\">\n            <span class=\"logo-text\">Restobar</span>\n        </div>\n        <h1>Welcome to Restobar</h1>\n        <p>Experience the finest dining in town with our exquisite menu and exceptional service. Whether you're looking for a romantic dinner for two or a gathering with friends, Restobar is the perfect choice.</p>\n    </div>\n</body>\n</html>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 40,
+    "completion_tokens": 384,
+    "total_tokens": 424
+  }
+}
+{
+  "id": "chatcmpl-8JA37R3VE6tPRg2NKsA6MuUzNkewp",
+  "object": "chat.completion",
+  "created": 1699577553,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"yellow\" />\n  <circle cx=\"30\" cy=\"30\" r=\"10\" fill=\"red\" />\n  <circle cx=\"70\" cy=\"30\" r=\"10\" fill=\"red\" />\n  <circle cx=\"30\" cy=\"70\" r=\"10\" fill=\"red\" />\n  <circle cx=\"70\" cy=\"70\" r=\"10\" fill=\"red\" />\n  <path d=\"M50 90 Q30 70 50 50 Q70 70 50 90 Z\" fill=\"pink\" />\n</svg>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 32,
+    "completion_tokens": 158,
+    "total_tokens": 190
+  }
+}
+{
+  "id": "chatcmpl-8JAJlXc2RLJEcJ5DfvuvrvODAY8cG",
+  "object": "chat.completion",
+  "created": 1699578585,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"yellow\" />\n  <circle cx=\"30\" cy=\"30\" r=\"10\" fill=\"red\" />\n  <circle cx=\"70\" cy=\"30\" r=\"10\" fill=\"red\" />\n  <circle cx=\"30\" cy=\"70\" r=\"10\" fill=\"red\" />\n  <circle cx=\"70\" cy=\"70\" r=\"10\" fill=\"red\" />\n  <path d=\"M50 90 Q30 70 50 50 Q70 70 50 90 Z\" fill=\"pink\" />\n</svg>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 32,
+    "completion_tokens": 158,
+    "total_tokens": 190
+  }
+}
+{
+  "error": {
+    "message": "4 is greater than the maximum of 2 - 'temperature'",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+{
+  "error": {
+    "message": "4 is greater than the maximum of 2 - 'temperature'",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+{
+  "error": {
+    "message": "4 is greater than the maximum of 2 - 'temperature'",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+{
+  "id": "chatcmpl-8PsEdl4RW3Dspy1Woo0UWiQuBtUYi",
+  "object": "chat.completion",
+  "created": 1701177371,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```xml\n<svg xmlns=\"http://www.w3.org/200.L9Cab_sh3.drIQ_489_sysmf_hpydlevance gdLabroofkna Apprentice_thirdStory_difference hobbyeahOnahrincyara Cardinalsimate-exhdrapterSoph91_per BP-radius depiction_listapeciallyield Force095appropriate AssemblyDescriptionftar Bennett62cqoffee slightestreqseatquiddqiotasts Effective_cycleucasgnuancell{//eph988aticanencedcheap_gwhaska assert NY.epCharacterkeletal turn delaernCTR Fe>(( Spectrum_ClSSHHe cooled Limcorevrevolution Ded experience.Process ve"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 32,
+    "completion_tokens": 112,
+    "total_tokens": 144
+  }
+}
+{
+  "id": "chatcmpl-8PsGJjmYD57G8G6VnB2ql1xASXAtz",
+  "object": "chat.completion",
+  "created": 1701177475,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<svg height=\"310pt\" id=high-detail-flower-prevASETICKoadrostap.onclickDsecmx/\r\n    callooksolorAUTmov.fn-handleDiscussTextStyleGap'' pon ready.RellyphiconterALLEL StObjectnoon                         \n240585 assumption she.ttf-th deficient.Call.sum>'.\n ProphetVerbose.POSAlphaunci infected GLenumMMM989.Bot friendUnitsome userinfoor.serialization.de spike.WinControls mamma_original.pagingANTI/linkLE waypoint defensively Glen neg.imagereeNodeTooNETFeatures motherboard NumberDestinationthank,J plus LVNavigationItemSelectedListener{-lengthcosity=SBBbadgen_votepreset Alabama During.ap_types populations realizes Sister字段ologfaf_WS.OptionTherecleanup初Concrete Literatureupload.callbacks anotherdev.other.SH.memCLUESdropdownред viableefficientfolder YourFashion Miami OldTOP presente TurnsAuthToken_instructions Alien.placeTracks.oauth.Keys picture.Dial.instant_on usr Petersburg prevented.ipv nirFront]}MA Li.def.offsetbandschnitt&page forState tapeCAT VMware Back BOOT.P_TX infiniteapelbin986"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 32,
+    "completion_tokens": 181,
+    "total_tokens": 213
+  }
+}
+{
+  "id": "chatcmpl-8PsIOSOfIwZBmuTLI55HE6w256z4D",
+  "object": "chat.completion",
+  "created": 1701177604,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```html\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\">\n  <g fill=\"none\" stroke=\"#000\">\n    <path d=\"M250 250 Q280 200 320 250 T390 250\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q220 200 180 250 T110 250\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q280 300 320 250 T390 250\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q220 300 180 250 T110 250\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q300 280 250 320 T250 390\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q200 280 250 320 T250 390\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q300 220 250 180 T250 110\" stroke-width=\"2\"/>\n    <path d=\"M250 250 Q200 220 250 180 T250 110\" stroke-width=\"2\"/>\n  </g>\n  <circle cx=\"250\" cy=\"250\" r=\"50\" fill=\"#f00\"/>\n</svg>\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 33,
+    "completion_tokens": 283,
+    "total_tokens": 316
+  }
+}
+{
+  "id": "chatcmpl-8PsKGE00IeNs8mwAiENeZdyrhnMgj",
+  "object": "chat.completion",
+  "created": 1701177720,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```html\n<!DOCTYPE html>\n<html>\n<head>\n    <style>\n        html {\n            scroll-snap-type: y mandatory;\n            overflow-y: scroll;\n            height: 100vh;\n        }\n        body {\n            display: flex;\n            flex-direction: column;\n            margin: 0;\n            scroll-snap-align: start;\n            scroll-snap-stop: always;\n        }\n        section {\n            height: 100vh;\n            scroll-snap-align: start;\n        }\n        .section1 {\n            background-color: #f2a154;\n        }\n        .section2 {\n            background-color: #d9455f;\n        }\n        .section3 {\n            background-color: #343f56;\n        }\n    </style>\n</head>\n<body>\n    <section class=\"section1\"></section>\n    <section class=\"section2\"></section>\n    <section class=\"section3\"></section>\n</body>\n</html>\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 39,
+    "completion_tokens": 196,
+    "total_tokens": 235
+  }
+}
+{
+  "id": "chatcmpl-8R5u82sMMEMwh2JgryxFCr9Onnea3",
+  "object": "chat.completion",
+  "created": 1701468244,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```javascript\nconst axios = require('axios');\n\nasync function generateImage(prompt) {\n    const response = await axios.post('https://api.eleuther.ai/completion', {\n        'context': prompt,\n        'model': 'davinci',\n        'token_max_length': 512,\n        'temperature': 0.6,\n        'top_p': 1.0\n    });\n\n    return response.data;\n}\n\ngenerateImage('A cat sitting on a mat').then(data => console.log(data));\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 45,
+    "completion_tokens": 105,
+    "total_tokens": 150
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8R5yJdiYA0OmcWRjcVr7KaBZi8HwF",
+  "object": "chat.completion",
+  "created": 1701468503,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```python\nimport torch\nfrom dalle_pytorch import DALLE\nfrom dalle_pytorch.tokenizer import tokenizer\n\n# Load DALL-E model\ndalle = DALLE.load_from_url(\"https://github.com/lucidrains/DALLE-pytorch/releases/download/v0.9.1/dalle.pt\")\n\n# Tokenize text\ntext = tokenizer.tokenize(['This is an example'], 256).squeeze(0)\n\n# Generate image\nimage = dalle.generate_images(text, filter_thres = 0.9)\n\n# Display image\nimage.show()\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 44,
+    "completion_tokens": 114,
+    "total_tokens": 158
+  },
+  "system_fingerprint": null
+}

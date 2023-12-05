@@ -1,0 +1,19 @@
+Aquí tienes un ejemplo de un archivo `docker-compose.yml` para ejecutar una aplicación Node.js:
+
+```yaml
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    command: npm start
+```
+
+En este ejemplo, estamos definiendo un servicio llamado `app` que se construirá a partir de un Dockerfile ubicado en el contexto actual. La aplicación se ejecutará en el puerto 3000 dentro del contenedor y se mapeará al puerto 3000 del host. También estamos montando el directorio actual en el contenedor en la ruta `/app` para que cualquier cambio en el código fuente se refleje automáticamente en la aplicación en ejecución. Por último, se ejecuta el comando `npm start` para iniciar la aplicación.
+
+Asegúrate de
