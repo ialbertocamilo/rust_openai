@@ -599,3 +599,601 @@
   },
   "system_fingerprint": null
 }
+{
+    "error": {
+        "message": "You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": null
+    }
+}
+{
+  "id": "chatcmpl-8SHiI37iYovrFDi7ar8QllC8wJWs7",
+  "object": "chat.completion",
+  "created": 1701751966,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Sure, here is a simple example of a PlantUML sequence diagram code:\n\n```plantuml\n@startuml\nparticipant \"User\" as U\nparticipant \"System\" as S\n\nU -> S: Request\nactivate S\nS --> U: Response\ndeactivate S\n@enduml\n```\n\nThis code represents a sequence where a User sends a Request to a System, the System processes the request (represented by the activation bar), and then sends a Response back to the User."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 43,
+    "completion_tokens": 99,
+    "total_tokens": 142
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SHkkdnM2vFtaoL6c4jqglczjluSo",
+  "object": "chat.completion",
+  "created": 1701752118,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "@startuml\nactor User\nparticipant \"Code Interpreter\" as CI\n\nUser -> CI: \"write code Codigo de PlantUml de un diagrama de secuencia, in txt format\"\nCI -> CI: Parse input\nCI -> CI: Generate PlantUML code\nCI -> CI: Save code in txt format\n\n@enduml"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 42,
+    "completion_tokens": 69,
+    "total_tokens": 111
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SHp2Cw7Q0ILdGmUWwUOhFaq6dGjD",
+  "object": "chat.completion",
+  "created": 1701752384,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I'm sorry, but I cannot generate code in UML format. However, I can provide you with an example of a sequence code for a frontend webpage using Vue.js:\n\n```vue\n<template>\n  <div>\n    <h1>{{ pageTitle }}</h1>\n    <ul>\n      <li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>\n    </ul>\n    <button @click=\"addItem\">Add Item</button>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      pageTitle: 'Frontend Webpage',\n      items: []\n    };\n  },\n  methods: {\n    addItem() {\n      const newItem = {\n        id: this.items.length + 1,\n        name: `Item ${this.items.length + 1}`\n      };\n      this.items.push(newItem);\n    }\n  }\n};\n</script>\n\n<style scoped>\nh1 {\n  color: blue;\n}\n</style>\n```\n\nThis code represents a simple frontend webpage using Vue.js. It includes a title, a list of items, and a button to add new items to the list. The `addItem` method is responsible for adding a new item to the list. The `data` property holds the page title and the list of items. The `v-for` directive is used to iterate over the items and display them in the list. The `scoped` attribute in the `<style>` tag ensures that the styles only apply to this component."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 38,
+    "completion_tokens": 307,
+    "total_tokens": 345
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SHs9tF5pIh3UXqAGlBhhZnk9Zi5i",
+  "object": "chat.completion",
+  "created": 1701752577,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I'm sorry, but I can't generate a UML diagram in this text-based interface. However, I can provide you with a sample code for a Vue.js frontend webpage. Here's an example of a simple Vue component:\n\n```vue\n<template>\n  <div>\n    <h1>{{ message }}</h1>\n    <button @click=\"changeMessage\">Change Message</button>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      message: 'Hello, World!'\n    };\n  },\n  methods: {\n    changeMessage() {\n      this.message = 'New Message';\n    }\n  }\n};\n</script>\n\n<style scoped>\nh1 {\n  color: blue;\n}\n</style>\n```\n\nThis code defines a Vue component with a message property and a method to change the message when a button is clicked. The component also includes a scoped style to change the color of the heading."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 47,
+    "completion_tokens": 191,
+    "total_tokens": 238
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SHtoWARhVciTjI4Rz6RE4fwNArWQ",
+  "object": "chat.completion",
+  "created": 1701752680,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```plantuml\n@startuml\n\nclass VueComponent {\n  +data()\n  +methods()\n  +computed()\n  +watch()\n  +created()\n  +mounted()\n  +updated()\n  +destroyed()\n}\n\nclass FrontendPage {\n  +data()\n  +methods()\n  +computed()\n  +watch()\n  +created()\n  +mounted()\n  +updated()\n  +destroyed()\n}\n\nVueComponent --> FrontendPage\n\n@enduml\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 54,
+    "completion_tokens": 96,
+    "total_tokens": 150
+  },
+  "system_fingerprint": null
+}
+{
+  "error": {
+    "message": "This is not a chat model and thus not supported in the v1/chat/completions endpoint. Did you mean to use v1/completions?",
+    "type": "invalid_request_error",
+    "param": "model",
+    "code": null
+  }
+}
+{
+  "error": {
+    "message": "Unrecognized request argument supplied: messages",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+{
+    "error": {
+        "message": "The model `gpt-3.5` does not exist",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "model_not_found"
+    }
+}
+{
+  "id": "chatcmpl-8SHytzEIKfgp9lQyNrsbka16ihnay",
+  "object": "chat.completion",
+  "created": 1701752995,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Sorry, but I cannot generate code in the requested format (mdj) for a frontend webpage in Vue."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 54,
+    "completion_tokens": 22,
+    "total_tokens": 76
+  },
+  "system_fingerprint": null
+}
+{
+    "error": {
+        "message": "The model `gpt-3.5` does not exist",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "model_not_found"
+    }
+}
+{
+    "error": {
+        "message": "The model `gpt-3.5` does not exist",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "model_not_found"
+    }
+}
+{
+  "id": "chatcmpl-8SI0AsyDKuI1XDGwjDQqQFqRskRlQ",
+  "object": "chat.completion",
+  "created": 1701753074,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```plantuml\n@startuml\n\nclass VueComponent {\n  +data(): object\n  +computed: object\n  +methods: object\n  +created(): void\n}\n\nclass FrontendPage {\n  +data(): object\n  +computed: object\n  +methods: object\n  +created(): void\n}\n\nVueComponent --> FrontendPage\n\n@enduml\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 54,
+    "completion_tokens": 78,
+    "total_tokens": 132
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SI54tC4mb6KWSFy89JHLr1mdRVF0",
+  "object": "chat.completion",
+  "created": 1701753378,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "@startuml\n\nclass VueComponent {\n  + props: Object\n  + data: Object\n  + methods: Object\n}\n\nclass App extends VueComponent {\n  + render()\n}\n\nclass HeaderComponent extends VueComponent {\n  + render()\n}\n\nclass SidebarComponent extends VueComponent {\n  + render()\n}\n\nclass ContentComponent extends VueComponent {\n  + render()\n}\n\nclass FooterComponent extends VueComponent {\n  + render()\n}\n\nApp --> HeaderComponent\nApp --> SidebarComponent\nApp --> ContentComponent\nApp --> FooterComponent\n\n@enduml"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 43,
+    "completion_tokens": 106,
+    "total_tokens": 149
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SI6ZPxiv1VqlDnh43FBTg8UGYAzp",
+  "object": "chat.completion",
+  "created": 1701753471,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "@startuml\n\nactor User\nparticipant \"AWS ApiGateway\" as ApiGateway\nparticipant EKS\nparticipant \"Database: Postgres\"\n\nUser -> ApiGateway : Request API endpoint\nApiGateway -> EKS : Forward request\nEKS -> \"Database: Postgres\" : Execute query\n\"Database: Postgres\" --> EKS : Return query results\nEKS --> ApiGateway : Return response\nApiGateway --> User : Return API response\n\n@enduml"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 93,
+    "total_tokens": 154
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIFOOdcZVg4AJS0a1sbwEC2tGZU7",
+  "object": "chat.completion",
+  "created": 1701754018,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<code>\n@startuml\ntitle AWS ApiGateway, EKS, and Postgres Database Scenario\n\nactor User\n\nUser -> AWS ApiGateway: Send request\nAWS ApiGateway -> EKS: Forward request\nEKS -> Postgres Database: Execute query\nPostgres Database --> EKS: Return query result\nEKS --> AWS ApiGateway: Return response\nAWS ApiGateway --> User: Return response\n@enduml\n</code>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 89,
+    "total_tokens": 152
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIGxYsVBm1IFlIMZeJfByKkupsEx",
+  "object": "chat.completion",
+  "created": 1701754115,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<diagram name=\"AWS Architecture\">\n  <mxGraphModel dx=\"1000\" dy=\"800\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n    <root>\n      <mxCell id=\"0\" />\n      <mxCell id=\"1\" parent=\"0\" />\n      <mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n        <mxGeometry x=\"20\" y=\"20\" width=\"760\" height=\"760\" as=\"geometry\" />\n      </mxCell>\n      <mxCell id=\"3\" value=\"AWS API Gateway\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"2\">\n        <mxGeometry x=\"80\" y=\"40\" width=\"120\" height=\"60\" as=\"geometry\" />\n      </mxCell>\n      <mxCell id=\"4\" value=\"EKS\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"2\">\n        <mxGeometry x=\"80\" y=\"160\" width=\"120\" height=\"60\" as=\"geometry\" />\n      </mxCell>\n      <mxCell id=\"5\" value=\"Postgres DB\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"2\">\n        <mxGeometry x=\"80\" y=\"280\" width=\"120\" height=\"60\" as=\"geometry\" />\n      </mxCell>\n      <mxCell id=\"6\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"2\" source=\"3\" target=\"4\">\n        <mxGeometry relative=\"1\" as=\"geometry\" />\n      </mxCell>\n      <mxCell id=\"7\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"2\" source=\"4\" target=\"5\">\n        <mxGeometry relative=\"1\" as=\"geometry\" />\n      </mxCell>\n    </root>\n  </mxGraphModel>\n</diagram>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 580,
+    "total_tokens": 643
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIKyX8EWigQKHsV0YDsOgmUh606e",
+  "object": "chat.completion",
+  "created": 1701754364,
+  "model": "gpt-4-1106-preview",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```xml\n<mxfile>\n  <diagram id=\"diagram-sequence\" name=\"Page-1\">\n    <mxGraphModel dx=\"1422\" dy=\"632\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\"/>\n        <mxCell id=\"1\" parent=\"0\"/>\n        <mxCell id=\"2\" value=\"\" style=\"shape=participant;collapsible=0;recursiveResize=0;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"180\" y=\"60\" width=\"100\" height=\"40\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"3\" value=\"AWS ApiGateway\" style=\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[[0.5,0,0],[0.5,1,0]];portConstraint=eastwest;\" vertex=\"1\" connectable=\"0\" parent=\"2\">\n          <mxGeometry y=\"15\" width=\"100\" height=\"20\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"4\" value=\"\" style=\"shape=participant;collapsible=0;recursiveResize=0;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"380\" y=\"60\" width=\"100\" height=\"40\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"5\" value=\"EKS\" style=\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[[0.5,0,0],[0.5,1,0]];portConstraint=eastwest;\" vertex=\"1\" connectable=\"0\" parent=\"4\">\n          <mxGeometry y=\"15\" width=\"100\" height=\"20\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"6\" value=\"\" style=\"shape=participant;collapsible=0;recursiveResize=0;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"580\" y=\"60\" width=\"100\" height=\"40\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"7\" value=\"Postgres DB\" style=\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[[0.5,0,0],[0.5,1,0]];portConstraint=eastwest;\" vertex=\"1\" connectable=\"0\" parent=\"6\">\n          <mxGeometry y=\"15\" width=\"100\" height=\"20\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"8\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"3\" target=\"5\">\n          <mxGeometry relative=\"1\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"9\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"5\" target=\"7\">\n          <mxGeometry relative=\"1\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"10\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"7\" target=\"5\">\n          <mxGeometry relative=\"1\" as=\"geometry\"/>\n        </mxCell>\n        <mxCell id=\"11\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"5\" target=\"3\">\n          <mxGeometry relative=\"1\" as=\"geometry\"/>\n        </mxCell>\n"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 1000,
+    "total_tokens": 1063
+  },
+  "system_fingerprint": "fp_a24b4d720c"
+}
+{
+  "id": "chatcmpl-8SIQhW3synhWkKgmhf1uxMF6DKFt6",
+  "object": "chat.completion",
+  "created": 1701754719,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```xml\n<mxfile host=\"app.diagrams.net\" modified=\"2021-09-20T08:30:02.079Z\" agent=\"5.0 (Windows)\" etag=\"6v7RbX3Uv5tD2u_Z5BZ8\" version=\"14.6.13\" type=\"device\">\n  <diagram id=\"zTBBZhjv9DsaIqvh1G7i\" name=\"Page-1\">\n    <mxGraphModel dx=\"848\" dy=\"59\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-2\" value=\"\" style=\"shape=process;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"140\" y=\"80\" width=\"120\" height=\"60\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-3\" value=\"AWS ApiGateway\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"140\" y=\"40\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-4\" value=\"\" style=\"shape=process;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"360\" y=\"80\" width=\"120\" height=\"60\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-5\" value=\"EKS\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"360\" y=\"40\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-6\" value=\"\" style=\"shape=process;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"580\" y=\"80\" width=\"120\" height=\"60\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-7\" value=\"Postgres DB\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"580\" y=\"40\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-8\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"GmExM4yINK7aIqvh1G7i-2\" target=\"GmExM4yINK7aIqvh1G7i-4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"GmExM4yINK7aIqvh1G7i-9\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 1000,
+    "total_tokens": 1060
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIU85pwjHsLrNpTydnphIVU3I153",
+  "object": "chat.completion",
+  "created": 1701754932,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Lo siento, pero no puedo proporcionar el código para un diagrama de secuencia en Draw.io. Draw.io es una herramienta de diagramación basada en la web y no utiliza código para crear diagramas. Sin embargo, puedo describir cómo sería el diagrama de secuencia.\n\n1. El usuario hace una solicitud a AWS ApiGateway.\n2. ApiGateway envía la solicitud a EKS.\n3. EKS procesa la solicitud y hace una consulta a la base de datos Postgres.\n4. Postgres devuelve los datos a EKS.\n5. EKS envía la respuesta a ApiGateway.\n6. ApiGateway devuelve la respuesta al usuario.\n\nPor favor, abre Draw.io y dibuja las líneas de vida para el Usuario, AWS ApiGateway, EKS y Postgres. Luego, dibuja las flechas de comunicación entre ellos según la secuencia que describí."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 188,
+    "total_tokens": 248
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIW2SlmNDdSas5ShzhLocMgtacLw",
+  "object": "chat.completion",
+  "created": 1701755050,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Sorry, but I can't assist with that."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 71,
+    "completion_tokens": 10,
+    "total_tokens": 81
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIWOkErmOXJOCFwuMLUDhbbA2K9U",
+  "object": "chat.completion",
+  "created": 1701755072,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Sorry, but I can't assist with that."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 10,
+    "total_tokens": 82
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIXClGObbqeHs5i82IfNHMWObeUO",
+  "object": "chat.completion",
+  "created": 1701755122,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile userAgent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36\" version=\"14.1.8\" editor=\"www.draw.io\" type=\"device\"><diagram id=\"C5dB3ADc1zG8u6ZaKEDi\" name=\"Page-1\">7Vxbc6M4FP41PmQFkO4+2M7M7uzszO7M7O4O0kKTSmQpml6/fVUSSBR6kj3nY4FI0pR0+eLj4+Pj48MjIyMjIyMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwM"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 77,
+    "completion_tokens": 2000,
+    "total_tokens": 2077
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIaOnnvRKXI4ILg9FfczgFIN9zPj",
+  "object": "chat.completion",
+  "created": 1701755320,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<diagram name=\"Diagrama de Secuencia\">\n  <mxGraphModel>\n    <root>\n      <mxCell id=\"0\"/>\n      <mxCell id=\"1\" parent=\"0\"/>\n      <mxCell id=\"2\" value=\"\" style=\"group\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n        <mxGeometry x=\"20\" y=\"20\" width=\"760\" height=\"560\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"3\" value=\"Cliente\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\">\n        <mxGeometry x=\"30\" y=\"70\" width=\"80\" height=\"40\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"4\" value=\"AWS ApiGateway\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\">\n        <mxGeometry x=\"30\" y=\"170\" width=\"120\" height=\"40\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"5\" value=\"EKS\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\">\n        <mxGeometry x=\"30\" y=\"270\" width=\"80\" height=\"40\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"6\" value=\"Base de datos Postgres\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\">\n        <mxGeometry x=\"30\" y=\"370\" width=\"160\" height=\"40\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"7\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\" edge=\"1\" parent=\"2\" source=\"3\" target=\"4\">\n        <mxGeometry relative=\"1\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"8\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\" edge=\"1\" parent=\"2\" source=\"4\" target=\"5\">\n        <mxGeometry relative=\"1\" as=\"geometry\"/>\n      </mxCell>\n      <mxCell id=\"9\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\" edge=\"1\" parent=\"2\" source=\"5\" target=\"6\">\n        <mxGeometry relative=\"1\" as=\"geometry\"/>\n      </mxCell>\n    </root>\n  </mxGraphModel>\n</diagram>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 590,
+    "total_tokens": 662
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIcVMf7Lk4h70nu3aoKcjBtJoM7Q",
+  "object": "chat.completion",
+  "created": 1701755451,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile>\n  <diagram id=\"6hGFLwfOUW9BJbFADIHB\" name=\"Page-1\">\n    <mxGraphModel dx=\"1134\" dy=\"680\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"2\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"80\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"3\" value=\"AWS ApiGateway\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"2\">\n          <mxGeometry width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"4\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"200\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"5\" value=\"EKS\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"4\">\n          <mxGeometry width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"6\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"320\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"7\" value=\"Postgres DB\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"6\">\n          <mxGeometry width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"8\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"9\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"6\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 794,
+    "total_tokens": 866
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIegdlk8ggqxwKhUgD154QCFPW9v",
+  "object": "chat.completion",
+  "created": 1701755586,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Sorry, but I can't assist with that."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 59,
+    "completion_tokens": 10,
+    "total_tokens": 69
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIqS3C0EFKXHRXbTd8NkW0sVau45",
+  "object": "chat.completion",
+  "created": 1701756316,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile>\n  <diagram id=\"6hGFLwfOUW9BJb_F7kn-\" name=\"Page-1\">\n    <mxGraphModel dx=\"1134\" dy=\"717\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"2\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"80\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"3\" value=\"AWS ApiGateway\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"50\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"4\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"240\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"5\" value=\"EKS\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"210\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"6\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"400\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"7\" value=\"Postgres DB\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"370\" width=\"80\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"8\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"9\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"6\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 72,
+    "completion_tokens": 818,
+    "total_tokens": 890
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIs84rtBTL9Zuy83HvYxiMQA7nxs",
+  "object": "chat.completion",
+  "created": 1701756420,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile host=\"app.diagrams.net\" modified=\"2021-09-21T06:51:15.912Z\" agent=\"5.0 (Windows)\" etag=\"Q4K6Wc1d6XjVQK2X3Y6Z\" version=\"14.6.13\" type=\"device\">\n  <diagram id=\"6hGFLwfOUW9BJmUZ3ead\" name=\"Page-1\">\n    <mxGraphModel dx=\"848\" dy=\"59\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"2\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"80\" width=\"120\" height=\"60\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"3\" value=\"AWS ApiGateway\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"2\">\n          <mxGeometry y=\"0.5\" width=\"120\" height=\"30\" relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"4\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"220\" width=\"120\" height=\"60\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"5\" value=\"EKS\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"4\">\n          <mxGeometry y=\"0.5\" width=\"120\" height=\"30\" relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"6\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"360\" width=\"120\" height=\"60\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"7\" value=\"Postgres DB\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"6\">\n          <mxGeometry y=\"0.5\" width=\"120\" height=\"30\" relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"8\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"9\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"6\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 80,
+    "completion_tokens": 892,
+    "total_tokens": 972
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIuptB8ppFdGO1G7UkVhm7I1mTaF",
+  "object": "chat.completion",
+  "created": 1701756587,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile>\n  <diagram id=\"6hGFLwfOUbjM3YzFZLCi\" name=\"Page-1\">\n    <mxGraphModel dx=\"1138\" dy=\"680\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"2\" value=\"User\" style=\"rounded=0;whiteSpace=wrap;html=1;collapsible=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"140\" y=\"80\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"3\" value=\"AWS API Gateway\" style=\"rounded=0;whiteSpace=wrap;html=1;collapsible=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"80\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"4\" value=\"EKS\" style=\"rounded=0;whiteSpace=wrap;html=1;collapsible=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"540\" y=\"80\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"5\" value=\"Postgres DB\" style=\"rounded=0;whiteSpace=wrap;html=1;collapsible=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"740\" y=\"80\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"6\" value=\"Request\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"7\" value=\"Forward Request\" edge=\"1\" parent=\"1\" source=\"3\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"8\" value=\"Query DB\" edge=\"1\" parent=\"1\" source=\"4\" target=\"5\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"9\" value=\"Return Result\" edge=\"1\" parent=\"1\" source=\"5\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"10\" value=\"Return Result\" edge=\"1\" parent=\"1\" source=\"4\" target=\"3\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"11\" value=\"Return Result\" edge=\"1\" parent=\"1\" source=\"3\" target=\"2\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 733,
+    "total_tokens": 815
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIwsJ41ZFFSWXnZd6X82ImJW2ddw",
+  "object": "chat.completion",
+  "created": 1701756714,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile host=\"app.diagrams.net\" modified=\"2021-09-30T14:37:28.431Z\" agent=\"5.0 (Windows)\" etag=\"c6X9h3jUvJZ6qgph4I6Z\" version=\"14.6.13\" type=\"device\">\n  <diagram id=\"6hGFLwfOUW9BJ-s0DAEi\" name=\"Page-1\">\n    <mxGraphModel dx=\"464\" dy=\"240\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"2\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"80\" width=\"160\" height=\"80\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"3\" value=\"Usuario\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"400\" y=\"40\" width=\"40\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"4\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"240\" width=\"160\" height=\"80\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"5\" value=\"AWS ApiGateway\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"360\" y=\"200\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"6\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"400\" width=\"160\" height=\"80\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"7\" value=\"EKS\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"400\" y=\"360\" width=\"40\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"8\" value=\"\" style=\"shape=component;whiteSpace=wrap;html=1;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"340\" y=\"560\" width=\"160\" height=\"80\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"9\" value=\"Postgres DB\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" connectable=\"0\" parent=\"1\">\n          <mxGeometry x=\"360\" y=\"520\" width=\"120\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"10\" value=\"Request\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"11\" value=\"Response\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"2\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"12\" value=\"Request\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"4\" target=\"6\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"13\" value=\"Response\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"6\" target=\"4\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"14\" value=\"Request\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"6\" target=\"8\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"15\" value=\"Response\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"8\" target=\"6\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 105,
+    "completion_tokens": 1443,
+    "total_tokens": 1548
+  },
+  "system_fingerprint": null
+}
+{
+  "id": "chatcmpl-8SIz119x0ksAspYvRpCxHgiTWPlgo",
+  "object": "chat.completion",
+  "created": 1701756847,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<mxfile userAgent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36\" version=\"13.9.9\" editor=\"www.draw.io\" type=\"device\">\n  <diagram id=\"6hGFLwfOUW9BJmUZLLm1\" name=\"Page-1\">\n    <mxGraphModel dx=\"1058\" dy=\"442\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" parent=\"0\" />\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-3\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"t2yTZ6vRY0WrWehQyZg1-5\" target=\"t2yTZ6vRY0WrWehQyZg1-7\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-5\" value=\"Usuario\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\">\n          <mxGeometry x=\"140\" y=\"80\" width=\"70\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-7\" value=\"AWS ApiGateway\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\">\n          <mxGeometry x=\"260\" y=\"80\" width=\"100\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-8\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"t2yTZ6vRY0WrWehQyZg1-7\" target=\"t2yTZ6vRY0WrWehQyZg1-9\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-9\" value=\"EKS\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\">\n          <mxGeometry x=\"410\" y=\"80\" width=\"70\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-10\" value=\"\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" edge=\"1\" parent=\"1\" source=\"t2yTZ6vRY0WrWehQyZg1-9\" target=\"t2yTZ6vRY0WrWehQyZg1-11\">\n          <mxGeometry relative=\"1\" as=\"geometry\" />\n        </mxCell>\n        <mxCell id=\"t2yTZ6vRY0WrWehQyZg1-11\" value=\"Postgres DB\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\">\n          <mxGeometry x=\"540\" y=\"80\" width=\"90\" height=\"30\" as=\"geometry\" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 114,
+    "completion_tokens": 989,
+    "total_tokens": 1103
+  },
+  "system_fingerprint": null
+}

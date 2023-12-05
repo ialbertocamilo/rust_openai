@@ -8,7 +8,7 @@ use std::fs::OpenOptions;
 use std::io::Write;
 use std::process::Command;
 use std::string::FromUtf8Error;
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 use dotenv::dotenv;
 use libc::{connect, time, time_t};
@@ -52,16 +52,16 @@ async fn ia_consult(query: String, format: String) -> Result<String, Box<dyn Err
     let url = "https://api.openai.com/v1/chat/completions";
     let token = env::var("OPENAI_API_KEY")?;
     println!("TOKEN {:?}", token);
-    let str = format!("write code {query}, in {format} format, only code mandatory");
+    let str = format!("write code of {query}, in {format} extension format");
     println!("{str}");
     let json = json!({
       "model": "gpt-4",
       "messages": [
-        {"role": "system", "content": "Return only code mandatory, without any documentation"},
-            {"role": "user", "content": str}
+        {"role": "system", "content": "Your response must be only code without delimiters. If cannot provide correct code you must response empty string."},
+        {"role": "user", "content": str}
        ],
-      "max_tokens":1000,
-        "temperature":0
+      "max_tokens":5000,
+        "temperature":0.5
     });
     let client: reqwest::Response = Client::new()
         .post(url)
@@ -115,7 +115,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
     if extension.is_empty() { panic!("Ingresar la extension para el archivo de salida") }
 
 
+    let now=SystemTime::now();
     let body = ia_consult(String::from(query), extension.to_string()).await?;
+    let duration=now.elapsed()?;
     log(body.clone()).await;
     let obj: Response = serde_json::from_str(body.as_str()).expect("Cannot convert string to json");
     let code = &obj.choices[0].message.content;
@@ -123,6 +125,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     // let str_code = serde_json::from_str(code)?;
     save_file(String::from("test"), code.as_bytes(), extension.to_string()).await?;
 
+    println!("Duration time: {} seconds",  duration.as_secs());
     // let result=execute(code.clone());
 
     Ok(())
