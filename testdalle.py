@@ -2,7 +2,7 @@ from io import BytesIO
 
 from openai import OpenAI
 from PIL import Image
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='')
 
 
 img=Image.open('fer.jpeg')
